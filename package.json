@@ -22,7 +22,9 @@
   "author": "Zhe Zhang <neomana@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "d3": "3.5.17"
+    "d3": "3.5.17",
+    "normalize.css": "4.1.1",
+    "react": "15.0.2"
   },
   "devDependencies": {
     "autoprefixer": "6.3.6",
