@@ -37,10 +37,9 @@ let tree = d3.layout.tree()
 
     return children
   })
-// .sort((a, b) => {
-//   return a.Id < b.Id ? -1 : a.Id > b.Id ? 1 : a.Id >= b.Id ? 0 : NaN
-// })
-console.log(tree.children())
+  // .sort((a, b) => {
+  //   return a.Id < b.Id ? -1 : a.Id > b.Id ? 1 : a.Id >= b.Id ? 0 : NaN
+  // })
 
 let diagonal = d3.svg.diagonal().projection(d => [d.y, d.x])
 
@@ -139,7 +138,6 @@ const update = (source) => {
   nodes = tree.nodes(root).reverse()
   links = tree.links(nodes)
   normalize(nodes)
-  console.log('nodes', nodes)
 
   // Normalize for fixed-depth.
   // nodes.forEach(function (d) { d.y = d.depth * 280 })
@@ -231,6 +229,9 @@ function click (d) {
     d.children = d._children
     d._children = null
   }
+  console.log(d)
+  d.parent.children.pop()
+  // d.parent.children.push()
   update(d)
 }
 
