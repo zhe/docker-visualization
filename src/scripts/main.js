@@ -13,6 +13,12 @@ let stats = {
   images: 0
 }
 
+// let drag = d3.behavior.drag()
+//   .origin(d => d)
+//   .on('dragstart', dragstarted)
+//   .on('drag', dragged)
+//   .on('dragend', dragended)
+
 let tree = d3.layout.tree()
   .size([height, width - 160])
   .children(d => {
@@ -38,16 +44,25 @@ console.log(tree.children())
 
 let diagonal = d3.svg.diagonal().projection(d => [d.y, d.x])
 
+// Define zoom behavier
+let zoom = d3.behavior.zoom().scaleExtent([1, 10]).on('zoom', () => {
+  svg.attr('transform', 'translate(' + d3.event.translate + ')' + ' scale(' + d3.event.scale + ')')
+})
+
 let svg = d3.select('body').append('svg')
   .attr('width', width)
   .attr('height', height)
+  .call(zoom)
   .attr('class', 'container')
   .append('g')
-  .attr('transform', 'translate(40, 0)')
+  .attr('class', 'content')
 
-var i = 0,
-  duration = 750,
-  root
+d3.select('.btn-zoom-reset').on('click', () => {
+})
+
+let i = 0
+let duration = 750
+let root
 
 // Get the data in JSON format
 d3.json('data/testfile.json', (error, response) => {
@@ -218,3 +233,16 @@ function click (d) {
   }
   update(d)
 }
+
+// function dragstarted (d) {
+//   d3.event.sourceEvent.stopPropagation()
+//   d3.select(this).classed('dragging', true)
+// }
+
+// function dragged (d) {
+//   d3.select(this).attr('cx', d.x = d3.event.x).attr('cy', d.y = d3.event.y)
+// }
+
+// function dragended (d) {
+//   d3.select(this).classed('dragging', false)
+// }
