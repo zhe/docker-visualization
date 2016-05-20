@@ -27,7 +27,7 @@ body {
   cursor: pointer;
 }
 
-.node-container.is-exited {
+.node-container.is-exited text {
   fill: #ccc;
 }
 
