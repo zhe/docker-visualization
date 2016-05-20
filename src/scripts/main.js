@@ -1,4 +1,4 @@
-/* global d3 */
+/* global d3, WebSocket, XMLHttpRequest */
 
 // Defines variables
 const margin = {top: 50, right: 40, bottom: 50, left: 40}
@@ -267,3 +267,76 @@ function click (d) {
 // function dragended (d) {
 //   d3.select(this).classed('dragging', false)
 // }
+
+const setup = () => {
+  let ws = new WebSocket('ws://104.236.190.90:5000/conn')
+
+  // Listen for the connection open event then call the sendMessage function
+  ws.onopen = (evt) => {
+    console.log('CONNECTED')
+    ws.send('Hello')
+  }
+
+  // Listen for the close connection event
+  ws.onclose = (evt) => {
+    console.log('DISCONNECTED')
+  }
+
+  // Listen for connection errors
+  ws.onerror = (evt) => {
+    console.log('ERROR: ' + evt.data)
+  }
+
+  // Listen for new messages arriving at the client
+  ws.onmessage = (evt) => {
+    console.log('MESSAGE RECEIVED: ' + evt.data)
+  }
+}
+
+// The window.addEventListener triggers when the web page is loaded
+// then call the setup function window.addEventListener("load", setup, false)
+// window.addEventListener('load', setup, false)
+
+// Upload compose.yml file
+
+let form = document.getElementById('file-form')
+let fileSelect = document.getElementById('file-select')
+let uploadButton = document.getElementById('upload-button')
+
+form.onsubmit = function (event) {
+  event.preventDefault()
+
+  // Update button text.
+  uploadButton.innerHTML = 'Uploading...'
+
+  let files = fileSelect.files
+  let formData = new FormData()
+  formData.append('file', fileSelect.files[0])
+  formData.append('Projectname', 'test_e')
+
+  // // Loop through each of the selected files.
+  // for (var i = 0; i < files.length; i++) {
+  //   var file = files[i]
+
+  //   // Check the file type.
+  //   if (!file.type.match('image.*')) {
+  //     continue
+  //   }
+
+  //   // Add the file to the request.
+  //   formData.append('photos[]', file, file.name)
+  // }
+
+  let xhr = new XMLHttpRequest()
+
+  // Set up a handler for when the request finishes.
+  xhr.onload = function () {
+    if (xhr.status === 200) {
+      // File(s) uploaded.
+      uploadButton.innerHTML = 'Upload'
+    } else {
+      console.log('An error occurred!')
+    }
+  }
+  xhr.send(formData)
+}
