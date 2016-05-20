@@ -1,4 +1,4 @@
-/* global d3, WebSocket, XMLHttpRequest */
+/* global d3, WebSocket, XMLHttpRequest, fetch */
 
 // Defines variables
 const margin = {top: 50, right: 40, bottom: 50, left: 40}
@@ -149,6 +149,7 @@ const update = (source) => {
   // Enter any new nodes at the parent's previous position.
   var nodeEnter = node.enter().append('g')
     .attr('class', 'node')
+    .attr('data-nodeId', d => d.id)
     .classed({
       'node-app': d => d.type === 'app',
       'node-image': d => d.type === 'image',
@@ -170,7 +171,15 @@ const update = (source) => {
     .style('fill', function (d) { return d._children ? 'lightsteelblue' : '#fff' })
 
   nodeEnter
-    .filter(d => d.type !== 'container')
+    .filter(d => d.type === 'app')
+    .append('polygon')
+    .attr('points', '6 0 12 6 6 12 0 6')
+    .attr('transform', function (d) { return 'translate(-6, -6)' })
+    .attr('class', 'node-shape')
+    .style('fill', function (d) { return d._children ? 'lightsteelblue' : '#fff' })
+
+  nodeEnter
+    .filter(d => d.type === 'image' || d.type === 'unknown')
     .append('circle')
     .attr('r', 1e-6)
     .attr('class', 'node-shape')
@@ -214,6 +223,11 @@ const update = (source) => {
   // Enter any new links at the parent's previous position.
   link.enter().insert('path', 'g')
     .attr('class', 'link')
+    .attr('data-nodeId', d => d.target.id)
+    .classed({
+      'is-up': d => d.target.type === 'container' && d.target.Status.indexOf('Up') > -1,
+      'is-exited': d => d.target.type === 'container' && d.target.Status.indexOf('Exited') > -1
+    })
     .attr('d', function (d) {
       var o = {x: source.x0, y: source.y0}
       return diagonal({source: o, target: o})
@@ -340,3 +354,11 @@ form.onsubmit = function (event) {
   }
   xhr.send(formData)
 }
+
+fetch('http://121.41.97.152:9998/crmonitor/project')
+  .then(response => response.json())
+  .then(json => {
+    console.log('parsed json', json)
+  })
+  .catch(ex => {
+    console.log('parsing failed', ex)})

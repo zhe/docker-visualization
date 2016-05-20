@@ -5,17 +5,54 @@
   <meta charset="utf-8">
   <title>Visualisation</title>
   <script type="text/javascript" src="node_modules/d3/d3.js"></script>
+  <script type="text/javascript" src="node_modules/whatwg-fetch/fetch.js"></script>
   <link rel="stylesheet" type="text/css" href="node_modules/normalize.css/normalize.css">
   <link rel="stylesheet" type="text/css" href="dist/styles/main.css">
 </head>
 
 <body>
   <div class="stats-list">
-    <div class="stats-item stats-apps">Apps: <span class="stats-value">0</span></div>
-    <div class="stats-item stats-images">Images: <span class="stats-value">0</span></div>
-    <div class="stats-item stats-containers">Containers: <span class="stats-value">0</span></div>
+    <div class="stats-item stats-apps">
+      <svg width="12px" height="12px" viewBox="0 0 12 12">
+        <defs>
+          <polygon id="path-1" points="6 0 12 6 6 12 0 6"></polygon>
+          <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="12" height="12" fill="white">
+            <use xlink:href="#path-1"></use>
+          </mask>
+        </defs>
+        <g>
+          <use stroke="#979797" mask="url(#mask-2)" stroke-width="2" fill="#FFFFFF" xlink:href="#path-1"></use>
+        </g>
+      </svg>
+      Apps: <span class="stats-value">0</span></div>
+    <div class="stats-item stats-images">
+      <svg width="12px" height="12px" viewBox="0 0 12 12">
+        <defs>
+          <circle id="path-3" cx="6" cy="6" r="4.5"></circle>
+          <mask id="mask-3" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="12" height="12" fill="white">
+            <use xlink:href="#path-3"></use>
+          </mask>
+        </defs>
+        <g>
+          <use stroke="#979797" mask="url(#mask-3)" stroke-width="2" fill="#FFFFFF" xlink:href="#path-3"></use>
+        </g>
+      </svg>
+      Images: <span class="stats-value">0</span></div>
+    <div class="stats-item stats-containers">
+      <svg width="12px" height="12px" viewBox="0 0 12 12">
+        <defs>
+          <polygon id="path-2" points="6 0 11.1961524 3 11.1961524 9 6 12 0.803847577 9 0.803847577 3"></polygon>
+          <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="12" height="12" fill="white">
+            <use xlink:href="#path-2"></use>
+          </mask>
+        </defs>
+        <g>
+          <use stroke="#979797" mask="url(#mask-2)" stroke-width="2" fill="#FFFFFF" xlink:href="#path-2"></use>
+        </g>
+      </svg>
+      Containers: <span class="stats-value">0</span></div>
     <div class="stats-item">
-      <button type="button" class="btn-zoom-reset">RESET</button>
+      <button type="button" class="btn-zoom-reset">Refresh</button>
     </div>
     <div class="stats-item">
       <form id="file-form" method="POST">

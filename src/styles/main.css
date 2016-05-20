@@ -63,18 +63,39 @@ body {
   stroke-width: 1.5px;
 }
 
-.node-shape:hover {
+.node:hover .node-shape {
   stroke-width: 3px;
 }
 
+.node:hover text {
+  fill: #4682b4;
+}
+
 .node text {
-  font: 10px sans-serif;
+  font: 12px 'Helvetica Neue',Helvetica, Arial, sans-serif;
+  fill: #333;
 }
 
 .link {
   fill: none;
   stroke: #ced1d2;
   stroke-width: 1.5px;
+}
+
+.link.is-exited {
+  animation: dash 5s linear infinite;
+  stroke: #e2e2e2;
+  stroke-dasharray: 3, 3;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 30;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 .link:hover {
