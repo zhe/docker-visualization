@@ -149,12 +149,32 @@ const update = (source) => {
   // Enter any new nodes at the parent's previous position.
   var nodeEnter = node.enter().append('g')
     .attr('class', 'node')
+    .classed({
+      'node-app': d => d.type === 'app',
+      'node-image': d => d.type === 'image',
+      'node-container': d => d.type === 'container',
+      'is-up': d => d.type === 'container' && d.Status.indexOf('Up') === 0,
+      'is-exited': d => d.type === 'container' && d.Status.indexOf('Exited') === 0
+    })
     .attr('transform', function (d) { return 'translate(' + source.y0 + ',' + source.x0 + ')'; })
     .on('click', click)
 
-  nodeEnter.append('circle')
+  // .append('circle')
+  // .attr('r', 1e-6)
+  nodeEnter
+    .filter(d => d.type === 'container')
+    .append('polygon')
+    .attr('points', '6 0 11.1961524 3 11.1961524 9 6 12 0.803847577 9 0.803847577 3')
+    .attr('transform', function (d) { return 'translate(-6, -6)' })
+    .attr('class', 'node-shape')
+    .style('fill', function (d) { return d._children ? 'lightsteelblue' : '#fff' })
+
+  nodeEnter
+    .filter(d => d.type !== 'container')
+    .append('circle')
     .attr('r', 1e-6)
-    .style('fill', function (d) { return d._children ? 'lightsteelblue' : '#fff'; })
+    .attr('class', 'node-shape')
+    .style('fill', function (d) { return d._children ? 'lightsteelblue' : '#fff' })
 
   nodeEnter.append('text')
     .attr('x', function (d) { return d.children || d._children ? -10 : 10; })
@@ -230,7 +250,7 @@ function click (d) {
     d._children = null
   }
   console.log(d)
-  d.parent.children.pop()
+  // d.parent.children.pop()
   // d.parent.children.push()
   update(d)
 }

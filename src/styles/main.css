@@ -31,11 +31,14 @@ body {
   fill: #ccc;
 }
 
-.node-container.is-exited .container-shape {
+.node-container.is-exited .node-shape {
+  fill: #fff !important;
   stroke: #ccc;
 }
 
-
+.node-container .node-shape {
+  fill: steelblue !important;
+}
 
 .app circle {
   transition: all 0.3s;
@@ -54,10 +57,14 @@ body {
   stroke-width: 1.5px;
 }
 
-.container-shape {
+.node-shape {
   fill: #fff;
   stroke: steelblue;
   stroke-width: 1.5px;
+}
+
+.node-shape:hover {
+  stroke-width: 3px;
 }
 
 .node text {
@@ -70,6 +77,11 @@ body {
   stroke-width: 1.5px;
 }
 
+.link:hover {
+  stroke: #bec0c1;
+  stroke-width: 2px;
+}
+
 #tooltip {
   position: absolute;
   display: block;
@@ -80,7 +92,6 @@ body {
   background-color: white;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1), 2px 2px 10px rgba(0, 0, 0, 0.3);
   pointer-events: none;
-
 }
 
 #tooltip.hidden {
