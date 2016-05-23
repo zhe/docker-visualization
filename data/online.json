@@ -1,0 +1,457 @@
+[
+    {
+        "Layers": [
+            {
+                "Containerlist": [
+                    {
+                        "Command": "nginx -g 'daemon off;'",
+                        "Created": 1463683396,
+                        "Hostip": "10.211.55.15",
+                        "Id": "f4f92f12fe619205fedd7ea27428d35f8f7b3d5fcf9ee6053a00cc9b5bccb37b",
+                        "Image": "nginx:latest",
+                        "Labels": {
+                            "com.docker.compose.config-hash": "f34ea5dad10f6b9b9d1afba928b43b7034c618b8f71950d34cdc036b04bd6139",
+                            "com.docker.compose.container-number": "1",
+                            "com.docker.compose.oneoff": "False",
+                            "com.docker.compose.project": "projectb",
+                            "com.docker.compose.service": "web",
+                            "com.docker.compose.version": "1.7.0"
+                        },
+                        "Names": [
+                            "/projectb_web_1"
+                        ],
+                        "Ports": [
+                            {},
+                            {}
+                        ],
+                        "Status": "Up 11 hours"
+                    }
+                ],
+                "Imagename": "nginx:latest",
+                "Name": "web"
+            },
+            {
+                "Containerlist": [
+                    {
+                        "Command": "docker-entrypoint.sh redis-server",
+                        "Created": 1463683608,
+                        "Hostip": "10.211.55.15",
+                        "Id": "782985fa8ee59a132513d28319415e4b8f9e4f32a27eeb69fe8fbb39da443174",
+                        "Image": "redis:latest",
+                        "Labels": {
+                            "com.docker.compose.config-hash": "e744bc44478afd9fe244b3209d11ef1c4e3054218d9e9dab60e742b868a61bb6",
+                            "com.docker.compose.container-number": "1",
+                            "com.docker.compose.oneoff": "False",
+                            "com.docker.compose.project": "projectb",
+                            "com.docker.compose.service": "redis",
+                            "com.docker.compose.version": "1.7.0"
+                        },
+                        "Names": [
+                            "/projectb_redis_1"
+                        ],
+                        "Ports": [
+                            {}
+                        ],
+                        "Status": "Up 11 hours"
+                    }
+                ],
+                "Imagename": "redis:latest",
+                "Name": "redis"
+            },
+            {
+                "Containerlist": [
+                    {
+                        "Command": "/docker-entrypoint.sh postgres",
+                        "Created": 1463683396,
+                        "Hostip": "10.211.55.15",
+                        "Id": "7bcd06a935cba459d7c94bc6257f84053d2941df6739910f9061c2c914a04c66",
+                        "Image": "postgres:latest",
+                        "Labels": {
+                            "com.docker.compose.config-hash": "ab25b5eb6940fb3d67d0f7bf47e2d8b91397c6e75788b7e0a02ded977135d981",
+                            "com.docker.compose.container-number": "1",
+                            "com.docker.compose.oneoff": "False",
+                            "com.docker.compose.project": "projectb",
+                            "com.docker.compose.service": "db",
+                            "com.docker.compose.version": "1.7.0"
+                        },
+                        "Names": [
+                            "/projectb_db_1"
+                        ],
+                        "Ports": [
+                            {}
+                        ],
+                        "Status": "Up 11 hours"
+                    }
+                ],
+                "Imagename": "postgres:latest",
+                "Name": "db"
+            }
+        ],
+        "Network": "",
+        "Projectname": "projectb",
+        "Volume": ""
+    },
+    {
+        "Layers": [
+            {
+                "Containerlist": [
+                    {
+                        "Command": "nginx -g 'daemon off;'",
+                        "Created": 1463717718,
+                        "Hostip": "10.211.55.15",
+                        "Id": "61321fcbeda45a428b3b54ad71b57057e0791b4526342b5b981a76a024787c3f",
+                        "Image": "nginx:latest",
+                        "Labels": {
+                            "com.docker.compose.config-hash": "5d3751e377f2a28afdd908b8aa3d4edf761c69babe0064250baa912fb5b6bf90",
+                            "com.docker.compose.container-number": "1",
+                            "com.docker.compose.oneoff": "False",
+                            "com.docker.compose.project": "projectc",
+                            "com.docker.compose.service": "web",
+                            "com.docker.compose.version": "1.7.0"
+                        },
+                        "Names": [
+                            "/projectc_web_1"
+                        ],
+                        "Ports": [
+                            {},
+                            {}
+                        ],
+                        "Status": "Up About an hour"
+                    }
+                ],
+                "Imagename": "nginx:latest",
+                "Name": "web"
+            },
+            {
+                "Containerlist": [
+                    {
+                        "Command": "docker-entrypoint.sh redis-server",
+                        "Created": 1463717718,
+                        "Hostip": "10.211.55.15",
+                        "Id": "d986ddf3348e7158d9a630fccbff1a7f32c1bc701fdd254ab212ca9bcb30f01f",
+                        "Image": "redis:latest",
+                        "Labels": {
+                            "com.docker.compose.config-hash": "0711b50bd80c7d49db4eb6146a93038010f663210fbae33dcc8e5442b88a7bc5",
+                            "com.docker.compose.container-number": "1",
+                            "com.docker.compose.oneoff": "False",
+                            "com.docker.compose.project": "projectc",
+                            "com.docker.compose.service": "redis",
+                            "com.docker.compose.version": "1.7.0"
+                        },
+                        "Names": [
+                            "/projectc_redis_1"
+                        ],
+                        "Ports": [
+                            {}
+                        ],
+                        "Status": "Up About an hour"
+                    }
+                ],
+                "Imagename": "redis:latest",
+                "Name": "redis"
+            },
+            {
+                "Containerlist": [
+                    {
+                        "Command": "/docker-entrypoint.sh postgres",
+                        "Created": 1463717718,
+                        "Hostip": "10.211.55.15",
+                        "Id": "2f865da7c316841c83fc2f479428851be2a454dbb3e0166f8fe7181e9c33893a",
+                        "Image": "postgres:latest",
+                        "Labels": {
+                            "com.docker.compose.config-hash": "96e156281ce50d3286ec79d47368be6dfd3319490bbcf21d20fb0c512c8010bc",
+                            "com.docker.compose.container-number": "1",
+                            "com.docker.compose.oneoff": "False",
+                            "com.docker.compose.project": "projectc",
+                            "com.docker.compose.service": "db",
+                            "com.docker.compose.version": "1.7.0"
+                        },
+                        "Names": [
+                            "/projectc_db_1"
+                        ],
+                        "Ports": [
+                            {}
+                        ],
+                        "Status": "Up About an hour"
+                    }
+                ],
+                "Imagename": "postgres:latest",
+                "Name": "db"
+            }
+        ],
+        "Network": "",
+        "Projectname": "projectc",
+        "Volume": ""
+    },
+    {
+        "Layers": [
+            {
+                "Containerlist": [
+                    {
+                        "Command": "nginx -g 'daemon off;'",
+                        "Created": 1463717785,
+                        "Hostip": "10.211.55.15",
+                        "Id": "72cd2740fc1a73521fd738212e982c227c9ecfdca266a57d1ddc4a903dd1c460",
+                        "Image": "nginx:latest",
+                        "Labels": {
+                            "com.docker.compose.config-hash": "b498fff43a482b0bfcfda50533dc8c67fa7c591cbc3420f28127f647741e4172",
+                            "com.docker.compose.container-number": "1",
+                            "com.docker.compose.oneoff": "False",
+                            "com.docker.compose.project": "projectd",
+                            "com.docker.compose.service": "web",
+                            "com.docker.compose.version": "1.7.0"
+                        },
+                        "Names": [
+                            "/projectd_web_1"
+                        ],
+                        "Ports": [
+                            {},
+                            {}
+                        ],
+                        "Status": "Up About an hour"
+                    }
+                ],
+                "Imagename": "nginx:latest",
+                "Name": "web"
+            },
+            {
+                "Containerlist": [
+                    {
+                        "Command": "docker-entrypoint.sh redis-server",
+                        "Created": 1463717785,
+                        "Hostip": "10.211.55.15",
+                        "Id": "f540b25b0f57e95ec9dbd292d6b17f5d063141f5c73b213013203f9b1c7b5176",
+                        "Image": "redis:latest",
+                        "Labels": {
+                            "com.docker.compose.config-hash": "66cae87892e58520dab76a16b96d0d6022928205142c8e9fbbe52822b125aa44",
+                            "com.docker.compose.container-number": "1",
+                            "com.docker.compose.oneoff": "False",
+                            "com.docker.compose.project": "projectd",
+                            "com.docker.compose.service": "redis",
+                            "com.docker.compose.version": "1.7.0"
+                        },
+                        "Names": [
+                            "/projectd_redis_1"
+                        ],
+                        "Ports": [
+                            {}
+                        ],
+                        "Status": "Up About an hour"
+                    }
+                ],
+                "Imagename": "redis:latest",
+                "Name": "redis"
+            },
+            {
+                "Containerlist": [
+                    {
+                        "Command": "/docker-entrypoint.sh postgres",
+                        "Created": 1463717810,
+                        "Hostip": "10.211.55.15",
+                        "Id": "a2ae4c9535514c40d990ab8fe3785d5f054a8752f5b0a05aed09045bcdc8557c",
+                        "Image": "postgres:latest",
+                        "Labels": {
+                            "com.docker.compose.config-hash": "1e21a3520ed9031dc1f2cf578f92ae2e5a55e80276c478576238b1cbdec2c4a5",
+                            "com.docker.compose.container-number": "4",
+                            "com.docker.compose.oneoff": "False",
+                            "com.docker.compose.project": "projectd",
+                            "com.docker.compose.service": "db",
+                            "com.docker.compose.version": "1.7.0"
+                        },
+                        "Names": [
+                            "/projectd_db_4"
+                        ],
+                        "Ports": [
+                            {}
+                        ],
+                        "Status": "Up About an hour"
+                    },
+                    {
+                        "Command": "/docker-entrypoint.sh postgres",
+                        "Created": 1463717810,
+                        "Hostip": "10.211.55.15",
+                        "Id": "12731fa328bd4f47197efc48cfc082204dcf151306d53d02ae286067cdca987d",
+                        "Image": "postgres:latest",
+                        "Labels": {
+                            "com.docker.compose.config-hash": "1e21a3520ed9031dc1f2cf578f92ae2e5a55e80276c478576238b1cbdec2c4a5",
+                            "com.docker.compose.container-number": "3",
+                            "com.docker.compose.oneoff": "False",
+                            "com.docker.compose.project": "projectd",
+                            "com.docker.compose.service": "db",
+                            "com.docker.compose.version": "1.7.0"
+                        },
+                        "Names": [
+                            "/projectd_db_3"
+                        ],
+                        "Ports": [
+                            {}
+                        ],
+                        "Status": "Up About an hour"
+                    },
+                    {
+                        "Command": "/docker-entrypoint.sh postgres",
+                        "Created": 1463717810,
+                        "Hostip": "10.211.55.15",
+                        "Id": "09fee3b095c1ef098a56d66bf668e87a99098abb6e786b51a0e325291e33b374",
+                        "Image": "postgres:latest",
+                        "Labels": {
+                            "com.docker.compose.config-hash": "1e21a3520ed9031dc1f2cf578f92ae2e5a55e80276c478576238b1cbdec2c4a5",
+                            "com.docker.compose.container-number": "2",
+                            "com.docker.compose.oneoff": "False",
+                            "com.docker.compose.project": "projectd",
+                            "com.docker.compose.service": "db",
+                            "com.docker.compose.version": "1.7.0"
+                        },
+                        "Names": [
+                            "/projectd_db_2"
+                        ],
+                        "Ports": [
+                            {}
+                        ],
+                        "Status": "Up About an hour"
+                    },
+                    {
+                        "Command": "/docker-entrypoint.sh postgres",
+                        "Created": 1463717785,
+                        "Hostip": "10.211.55.15",
+                        "Id": "30595b1796ba0a24ef8901041ed9c4515e61a591c7485a5a548994dabfcbd31d",
+                        "Image": "postgres:latest",
+                        "Labels": {
+                            "com.docker.compose.config-hash": "1e21a3520ed9031dc1f2cf578f92ae2e5a55e80276c478576238b1cbdec2c4a5",
+                            "com.docker.compose.container-number": "1",
+                            "com.docker.compose.oneoff": "False",
+                            "com.docker.compose.project": "projectd",
+                            "com.docker.compose.service": "db",
+                            "com.docker.compose.version": "1.7.0"
+                        },
+                        "Names": [
+                            "/projectd_db_1"
+                        ],
+                        "Ports": [
+                            {}
+                        ],
+                        "Status": "Up About an hour"
+                    }
+                ],
+                "Imagename": "postgres:latest",
+                "Name": "db"
+            }
+        ],
+        "Network": "",
+        "Projectname": "projectd",
+        "Volume": ""
+    },
+    {
+        "Layers": [
+            {
+                "Containerlist": null,
+                "Imagename": "projectz_web:latest",
+                "Name": "web"
+            },
+            {
+                "Containerlist": null,
+                "Imagename": "redis:latest",
+                "Name": "redis"
+            },
+            {
+                "Containerlist": null,
+                "Imagename": "postgres:latest",
+                "Name": "db"
+            }
+        ],
+        "Network": "",
+        "Projectname": "projectz",
+        "Volume": ""
+    },
+    {
+        "Layers": [
+            {
+                "Containerlist": [
+                    {
+                        "Command": "nginx -g 'daemon off;'",
+                        "Created": 1463681505,
+                        "Hostip": "10.211.55.15",
+                        "Id": "b19fc49a6d06354d21e32c052220a8505ba144016ca9144f398647d7b32f536b",
+                        "Image": "nginx:latest",
+                        "Labels": {
+                            "com.docker.compose.config-hash": "9cb352535855b4c1b3acf1f5c3ebe9c3d5d9147cf0c20e356b88579278470e0f",
+                            "com.docker.compose.container-number": "1",
+                            "com.docker.compose.oneoff": "False",
+                            "com.docker.compose.project": "projecta",
+                            "com.docker.compose.service": "web",
+                            "com.docker.compose.version": "1.7.0"
+                        },
+                        "Names": [
+                            "/projecta_web_1"
+                        ],
+                        "Ports": [
+                            {},
+                            {}
+                        ],
+                        "Status": "Up 11 hours"
+                    }
+                ],
+                "Imagename": "nginx:latest",
+                "Name": "web"
+            },
+            {
+                "Containerlist": null,
+                "Imagename": "redis:latest",
+                "Name": "redis"
+            },
+            {
+                "Containerlist": [
+                    {
+                        "Command": "/docker-entrypoint.sh postgres",
+                        "Created": 1463665568,
+                        "Hostip": "10.211.55.15",
+                        "Id": "b4fb6a8a5961ce4fd45788d41aa216508b149e28a309670256099d287413c35b",
+                        "Image": "postgres:latest",
+                        "Labels": {
+                            "com.docker.compose.config-hash": "6a5da705edbf58010d5f488639b73a9c2241bc117bd84bb422048705a5491ccc",
+                            "com.docker.compose.container-number": "2",
+                            "com.docker.compose.oneoff": "False",
+                            "com.docker.compose.project": "projecta",
+                            "com.docker.compose.service": "db",
+                            "com.docker.compose.version": "1.7.0"
+                        },
+                        "Names": [
+                            "/projecta_db_2"
+                        ],
+                        "Ports": [
+                            {}
+                        ],
+                        "Status": "Up 11 hours"
+                    },
+                    {
+                        "Command": "/docker-entrypoint.sh postgres",
+                        "Created": 1463665544,
+                        "Hostip": "10.211.55.15",
+                        "Id": "9fe3cda331761b2d1af2a7c725484d3c1f21ebe0ec25d1382eecbbb191aa6a42",
+                        "Image": "postgres:latest",
+                        "Labels": {
+                            "com.docker.compose.config-hash": "6a5da705edbf58010d5f488639b73a9c2241bc117bd84bb422048705a5491ccc",
+                            "com.docker.compose.container-number": "1",
+                            "com.docker.compose.oneoff": "False",
+                            "com.docker.compose.project": "projecta",
+                            "com.docker.compose.service": "db",
+                            "com.docker.compose.version": "1.7.0"
+                        },
+                        "Names": [
+                            "/projecta_db_1"
+                        ],
+                        "Ports": [
+                            {}
+                        ],
+                        "Status": "Up 11 hours"
+                    }
+                ],
+                "Imagename": "postgres:latest",
+                "Name": "db"
+            }
+        ],
+        "Network": "",
+        "Projectname": "projecta",
+        "Volume": ""
+    }
+]

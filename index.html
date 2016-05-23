@@ -52,19 +52,21 @@
       </svg>
       Containers: <span class="stats-value">0</span></div>
     <div class="stats-item">
-      <button type="button" class="btn-zoom-reset">Refresh</button>
+      <button type="button" class="btn-another">Demo</button>
+      <button type="button" class="btn-create">New Compose</button>
+      <!-- <button type="button" class="btn-scale">Scale</button> -->
     </div>
     <div class="stats-item">
-      <form id="file-form" method="POST">
+      <form id="file-form">
         <input type="file" id="file-select" name="files" class="inputfile">
         <label class="btn" for="file-select">Choose a .yml</label>
-        <button type="submit" id="upload-button">Upload</button>
+        <button id="upload-button">Upload</button>
       </form>
     </div>
   </div>
   <script type="text/javascript" src="dist/scripts/main.js"></script>
   <div id="tooltip" class="hidden">
-    <p></p>
+    <pre><p></p></pre>
   </div>
 </body>
 
